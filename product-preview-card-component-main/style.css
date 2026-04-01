@@ -1,0 +1,176 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Increase line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+:root{
+--prm: hsl(158, 36%, 37%);
+--Sprm: hsl(158, 42%, 18%);
+--h: hsl(212, 21%, 14%);
+--p: hsl(228, 12%, 48%);
+--bg: hsl(30, 38%, 92%);
+--bgm: hsl(0, 0%, 100%);
+--fw-regular-500:  "Montserrat", sans-serif;
+--fw-bold-700:  "Fraunces", serif;
+
+}
+*{
+    outline: none;
+}
+body{
+    background-color: var(--bg);
+    display: grid;
+    place-content: center ;
+    height: 100vh;
+    font-family: var(--fw-regular-500);
+
+    
+
+}
+p{
+        font-size: 14px;
+        color: var(--p);
+
+}
+h1{
+    font-size: 2rem;
+    font-family: var(--fw-bold-700);
+    color: var(--h);
+    line-height: 1.1;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bgm);
+    border-radius: .5rem; 
+
+    
+}
+
+
+
+article{
+   padding: 1.4rem;
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+.category{
+    letter-spacing: 0.25rem;
+     
+}
+.prices{
+
+    font-family: var(--fw-bold-700);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    height: 100%;
+        
+}
+.price{
+    color: var(--prm);
+    font-size: 2rem;
+
+
+}
+s{
+    color: var(--p);
+    font-size: small;
+}
+button{
+    padding: 0.5rem 0.75REM ;
+    background-color: var(--prm);
+    border: none;
+    border-radius: .5rem;
+    color: var(--bgm);
+    font-family: var(--fw-bold-700);
+
+
+}
+button:hover{
+    background-color: var(--Sprm);
+}
+button:active{
+    transform: scale(1.02);
+}
+
+button::before{
+  content: url(images/icon-cart.svg);
+  display: inline-block;
+  margin-right: 0.5rem;
+
+}
+@media screen and (min-width: 600px) {
+    body{
+        max-width: 600px;
+       margin: auto;
+       display: grid;
+       place-content: center ;
+
+    }
+    main{
+        display: flex;
+        flex-direction: row;
+
+        margin: auto;
+            
+
+     }
+    img{
+        height: 100%;
+        
+    }
+   
+}
